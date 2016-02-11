@@ -1,59 +1,31 @@
 package docParser;
 
 
+import document.TextDocument;
 import documentElements.BulletListElement;
 import documentElements.HeadingElement;
 import documentElements.ParagraphElement;
 import documentElements.TableElement;
 import documentElements.TextElement;
 
-public class DocumentBuilder
+public abstract class DocumentBuilder
 {
-	public DocumentBuilder(StructuredTextDocumentParser stdp)
-	{
-		
-	}
+	
+	public abstract void preamble();
 
-	public void preamble()
-	{
-		// TODO Auto-generated method stub
-		
-	}
+	public abstract void postamble();
+	
+	public abstract void addParagraph(ParagraphElement p);
 
-	public void postamble()
-	{
-		// TODO Auto-generated method stub
-		
-	}
+	public abstract void addBulletList(BulletListElement b);
 
-	public void addParagraph(ParagraphElement p)
-	{
-		// TODO Auto-generated method stub
-		
-	}
+	public abstract void addHeading(HeadingElement h);
 
-	public void addBulletList(BulletListElement b)
-	{
-		// TODO Auto-generated method stub
-		
-	}
+	public abstract void addTable(TableElement t);
 
-	public void addHeading(HeadingElement h)
-	{
-		// TODO Auto-generated method stub
-		
-	}
+	public abstract void addText(TextElement t);
 
-	public void addTable(TableElement t)
-	{
-		// TODO Auto-generated method stub
-		
-	}
+	public abstract TextDocument build();
 
-	public void addText(TextElement t)
-	{
-		// TODO Auto-generated method stub
-		
-	}
 
 }

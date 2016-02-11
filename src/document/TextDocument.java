@@ -2,23 +2,16 @@ package document;
 
 import java.util.List;
 
-import documentElements.StructuredTextElement;
+import documentElements.Element;
 
 public abstract class TextDocument
 {
 	public abstract void print();
 	
-	
-	public void addElement(StructuredTextElement ste)
-	{
-		
-	}
+	public abstract void addElement(Element element);
 
-	public List<StructuredTextElement> getElements()
-	{
-		
-		return null;
-	}
+	public abstract List<Element> getElements();
+
 	
 
 }

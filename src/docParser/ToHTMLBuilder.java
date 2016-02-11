@@ -1,38 +1,45 @@
 package docParser;
 
+import document.HTMLDocument;
+import document.TextDocument;
 import documentElements.BulletListElement;
 import documentElements.HeadingElement;
 import documentElements.ParagraphElement;
 import documentElements.TableElement;
 import documentElements.TextElement;
 
-public class HTMLBuilder extends DocumentBuilder
+public class ToHTMLBuilder extends DocumentBuilder
 {
-
-	public HTMLBuilder(StructuredTextDocumentParser stdp)
+	HTMLDocument doc;
+	public ToHTMLBuilder()
 	{
-		super(stdp);
-		// TODO Auto-generated constructor stub
+		doc = new HTMLDocument();
+	}
+	
+	@Override
+	public TextDocument build()
+	{
+		return doc;
 	}
 	@Override
-	public void preamble()
+	public void preamble() 
 	{
-		// TODO Auto-generated method stub
-		
+		doc.setUpDocument();
+		System.out.println("i preamblen ");
 	}
 	
 	@Override
 	public void postamble()
 	{
-		// TODO Auto-generated method stub
-		
+		System.out.println("i postamblen ");
+		doc.setEndOfDocument();
 	}
 	
 	@Override
 	public void addParagraph(ParagraphElement p)
 	{
-		// TODO Auto-generated method stub
-		
+		System.out.println("i paran " +p.getText());
+		doc.addParagraph(p);
 	}
 	
 	@Override
@@ -45,8 +52,8 @@ public class HTMLBuilder extends DocumentBuilder
 	@Override
 	public void addHeading(HeadingElement h)
 	{
-		// TODO Auto-generated method stub
-		
+		System.out.println("i headingen " +h.getText());
+		doc.addHeading(h);
 	}
 	
 	@Override

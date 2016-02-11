@@ -3,26 +3,28 @@ package document;
 import java.util.ArrayList;
 import java.util.List;
 
-import documentElements.StructuredTextElement;
+import documentElements.Element;
 
 public class StructuredTextDocument extends TextDocument
 {
-	ArrayList<StructuredTextElement> elementList = new ArrayList<StructuredTextElement>();
+	ArrayList<Element> elementList = new ArrayList<Element>();
 	
-	public List<StructuredTextElement> getElements()
+	public List<Element> getElements()
 	{
 		return elementList;
 	}
-	@Override
-	public void addElement(StructuredTextElement ste)
+	
+	public void addElement(Element e)
 	{
-		elementList.add(ste);
+		elementList.add(e);
 	}
-	@Override
+
 	public void print()
 	{
-		// TODO Auto-generated method stub
+		System.out.println(elementList);
 		
 	}
+
+	
 	
 }

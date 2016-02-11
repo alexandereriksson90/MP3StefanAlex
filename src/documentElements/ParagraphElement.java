@@ -1,19 +1,33 @@
 package documentElements;
 
+import docParser.DocumentVisitor;
+
 public class ParagraphElement extends StructuredTextElement
 {
+	private String paragraph;
 
+	public ParagraphElement(String paragraph)
+	{
+		this.paragraph = paragraph;
+	}
+	
 	@Override
 	public String getText()
 	{
-		// TODO Auto-generated method stub
-		return null;
+		return paragraph;
+	}
+
+	
+
+	@Override
+	public void accept(DocumentVisitor visitor)
+	{
+		visitor.visit(this);
 	}
 
 	@Override
-	public void addElement()
+	public void addElement(StructuredTextElement e)
 	{
-		// TODO Auto-generated method stub
 		
 	}
 

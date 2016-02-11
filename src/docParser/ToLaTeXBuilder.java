@@ -1,18 +1,20 @@
 package docParser;
 
+import document.LaTeXDocument;
+import document.TextDocument;
 import documentElements.BulletListElement;
 import documentElements.HeadingElement;
 import documentElements.ParagraphElement;
 import documentElements.TableElement;
 import documentElements.TextElement;
 
-public class TeXBuilder extends DocumentBuilder
+public class ToLaTeXBuilder extends DocumentBuilder
 {
-
-	public TeXBuilder(StructuredTextDocumentParser stdp)
+	
+	LaTeXDocument document;
+	public ToLaTeXBuilder()
 	{
-		super(stdp);
-		// TODO Auto-generated constructor stub
+		document = new LaTeXDocument();
 	}
 	
 	@Override
@@ -62,6 +64,13 @@ public class TeXBuilder extends DocumentBuilder
 	{
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public TextDocument build()
+	{
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

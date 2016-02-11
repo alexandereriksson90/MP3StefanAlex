@@ -1,20 +1,36 @@
 package documentElements;
 
+import java.util.ArrayList;
+
+import docParser.DocumentVisitor;
+
 public class CompositeElement extends StructuredTextElement
 {
-
+	ArrayList<StructuredTextElement> elements;
+	
+	public CompositeElement()
+	{
+		elements = new ArrayList<StructuredTextElement>();
+	}
 	@Override
 	public String getText()
 	{
-		// TODO Auto-generated method stub
+		
+
 		return null;
 	}
 
 	@Override
-	public void addElement()
+	public void addElement(StructuredTextElement e)
 	{
-		// TODO Auto-generated method stub
+		elements.add(e);
 		
+	}
+
+	@Override
+	public void accept(DocumentVisitor visitor)
+	{
+		visitor.visit(this);		
 	}
 
 }
