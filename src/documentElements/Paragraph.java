@@ -2,11 +2,11 @@ package documentElements;
 
 import docParser.DocumentVisitor;
 
-public class ParagraphElement extends StructuredTextElement
+public class Paragraph implements Element
 {
 	private String paragraph;
 
-	public ParagraphElement(String paragraph)
+	public Paragraph(String paragraph)
 	{
 		this.paragraph = paragraph;
 	}
@@ -26,7 +26,7 @@ public class ParagraphElement extends StructuredTextElement
 	}
 
 	@Override
-	public void addElement(StructuredTextElement e)
+	public void addElement(Element e)
 	{
 		
 	}

@@ -12,6 +12,4 @@ public abstract class TextDocument
 
 	public abstract List<Element> getElements();
 
-	
-
 }

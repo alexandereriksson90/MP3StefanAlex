@@ -4,24 +4,22 @@ import java.util.ArrayList;
 
 import docParser.DocumentVisitor;
 
-public class CompositeElement extends StructuredTextElement
+public class CompositeElement implements Element
 {
-	ArrayList<StructuredTextElement> elements;
+	ArrayList<Element> elements;
 	
 	public CompositeElement()
 	{
-		elements = new ArrayList<StructuredTextElement>();
+		elements = new ArrayList<Element>();
 	}
 	@Override
 	public String getText()
 	{
-		
-
 		return null;
 	}
 
 	@Override
-	public void addElement(StructuredTextElement e)
+	public void addElement(Element e)
 	{
 		elements.add(e);
 		
@@ -32,5 +30,6 @@ public class CompositeElement extends StructuredTextElement
 	{
 		visitor.visit(this);		
 	}
+
 
 }

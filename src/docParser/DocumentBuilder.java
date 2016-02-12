@@ -2,30 +2,30 @@ package docParser;
 
 
 import document.TextDocument;
-import documentElements.BulletListElement;
-import documentElements.HeadingElement;
-import documentElements.ParagraphElement;
-import documentElements.TableElement;
-import documentElements.TextElement;
+import documentElements.BulletList;
+import documentElements.CompositeElement;
+import documentElements.Heading;
+import documentElements.Paragraph;
+import documentElements.Table;
 
-public abstract class DocumentBuilder
+public interface DocumentBuilder
 {
 	
-	public abstract void preamble();
+	void preamble();
 
-	public abstract void postamble();
+	void postamble();
 	
-	public abstract void addParagraph(ParagraphElement p);
+	void addParagraph(Paragraph p);
 
-	public abstract void addBulletList(BulletListElement b);
+	void addBulletList(BulletList b);
 
-	public abstract void addHeading(HeadingElement h);
+	void addHeading(Heading h);
 
-	public abstract void addTable(TableElement t);
+	void addTable(Table t);
 
-	public abstract void addText(TextElement t);
+	TextDocument build();
 
-	public abstract TextDocument build();
+	void addCompositeElement(CompositeElement ce);
 
 
 }

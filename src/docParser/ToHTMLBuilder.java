@@ -2,71 +2,64 @@ package docParser;
 
 import document.HTMLDocument;
 import document.TextDocument;
-import documentElements.BulletListElement;
-import documentElements.HeadingElement;
-import documentElements.ParagraphElement;
-import documentElements.TableElement;
-import documentElements.TextElement;
+import documentElements.BulletList;
+import documentElements.CompositeElement;
+import documentElements.Heading;
+import documentElements.Paragraph;
+import documentElements.Table;
 
-public class ToHTMLBuilder extends DocumentBuilder
+public class ToHTMLBuilder implements DocumentBuilder
 {
-	HTMLDocument doc;
+	HTMLDocument document;
 	public ToHTMLBuilder()
 	{
-		doc = new HTMLDocument();
+		document = new HTMLDocument();
 	}
 	
 	@Override
 	public TextDocument build()
 	{
-		return doc;
+		return document;
 	}
 	@Override
 	public void preamble() 
 	{
-		doc.setUpDocument();
-		System.out.println("i preamblen ");
+		document.setUpDocument();
 	}
 	
 	@Override
 	public void postamble()
 	{
-		System.out.println("i postamblen ");
-		doc.setEndOfDocument();
+		document.setEndOfDocument();
 	}
 	
 	@Override
-	public void addParagraph(ParagraphElement p)
+	public void addParagraph(Paragraph p)
 	{
-		System.out.println("i paran " +p.getText());
-		doc.addParagraph(p);
+		document.addParagraph(p);
 	}
 	
 	@Override
-	public void addBulletList(BulletListElement b)
+	public void addBulletList(BulletList b)
 	{
-		// TODO Auto-generated method stub
 		
 	}
 	
 	@Override
-	public void addHeading(HeadingElement h)
+	public void addHeading(Heading h)
 	{
-		System.out.println("i headingen " +h.getText());
-		doc.addHeading(h);
+		document.addHeading(h);
 	}
 	
 	@Override
-	public void addTable(TableElement t)
+	public void addTable(Table t)
 	{
-		// TODO Auto-generated method stub
 		
 	}
-	
+
 	@Override
-	public void addText(TextElement t)
+	public void addCompositeElement(CompositeElement ce)
 	{
-		// TODO Auto-generated method stub
 		
 	}
 

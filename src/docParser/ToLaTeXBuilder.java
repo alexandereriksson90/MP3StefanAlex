@@ -2,13 +2,13 @@ package docParser;
 
 import document.LaTeXDocument;
 import document.TextDocument;
-import documentElements.BulletListElement;
-import documentElements.HeadingElement;
-import documentElements.ParagraphElement;
-import documentElements.TableElement;
-import documentElements.TextElement;
+import documentElements.BulletList;
+import documentElements.CompositeElement;
+import documentElements.Heading;
+import documentElements.Paragraph;
+import documentElements.Table;
 
-public class ToLaTeXBuilder extends DocumentBuilder
+public class ToLaTeXBuilder implements DocumentBuilder
 {
 	
 	LaTeXDocument document;
@@ -18,49 +18,34 @@ public class ToLaTeXBuilder extends DocumentBuilder
 	}
 	
 	@Override
-	public void preamble()
-	{
-		// TODO Auto-generated method stub
-		
-	}
-	
-	@Override
 	public void postamble()
 	{
-		// TODO Auto-generated method stub
 		
 	}
 	
 	@Override
-	public void addParagraph(ParagraphElement p)
+	public void addParagraph(Paragraph p)
 	{
 		// TODO Auto-generated method stub
 		
 	}
 	
 	@Override
-	public void addBulletList(BulletListElement b)
+	public void addBulletList(BulletList b)
 	{
 		// TODO Auto-generated method stub
 		
 	}
 	
 	@Override
-	public void addHeading(HeadingElement h)
+	public void addHeading(Heading h)
 	{
 		// TODO Auto-generated method stub
 		
 	}
 	
 	@Override
-	public void addTable(TableElement t)
-	{
-		// TODO Auto-generated method stub
-		
-	}
-	
-	@Override
-	public void addText(TextElement t)
+	public void addTable(Table t)
 	{
 		// TODO Auto-generated method stub
 		
@@ -71,6 +56,21 @@ public class ToLaTeXBuilder extends DocumentBuilder
 	{
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void addCompositeElement(CompositeElement ce)
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void preamble()
+	{
+		// TODO Auto-generated method stub
+		
 	}
 
 

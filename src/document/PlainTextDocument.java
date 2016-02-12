@@ -6,7 +6,7 @@ import documentElements.Element;
 
 public class PlainTextDocument extends TextDocument
 {
-	private StringBuffer sb;
+	protected StringBuffer sb;
 	public PlainTextDocument()
 	{
 		sb = new StringBuffer();
@@ -14,8 +14,7 @@ public class PlainTextDocument extends TextDocument
 	@Override
 	public void print()
 	{
-		
-		
+		return;
 	}
 	public void addElement(Element ste)
 	{
@@ -24,7 +23,6 @@ public class PlainTextDocument extends TextDocument
 	@Override
 	public List<Element> getElements()
 	{
-		
 		return null;
 	}
 

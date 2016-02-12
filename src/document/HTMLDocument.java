@@ -1,26 +1,24 @@
 package document;
 
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import documentElements.HeadingElement;
-import documentElements.ParagraphElement;
+import documentElements.Heading;
+import documentElements.Paragraph;
 
 public class HTMLDocument extends PlainTextDocument
 {
 	private FileWriter fw;
-	private BufferedWriter bw;
 	private File file;
 	
 	public HTMLDocument()
 	{
+		
 		try
 		{
 			file = new File("testFiles/HTMLWriteTest.html");
 			fw = new FileWriter(file);
-			bw = new BufferedWriter(fw);
 			
 		} catch (IOException e)
 		{
@@ -30,49 +28,23 @@ public class HTMLDocument extends PlainTextDocument
 	}
 	public void setUpDocument()
 	{
-		try
-		{
-			bw.write("<!DOCTYPE html> \n <html> \n <head> \n <meta charset=ISO-8859-1\n");
-			bw.write("<title>HtmlTest</title> \n</head><body>\n");
-		} catch (IOException e)
-		{
-			e.printStackTrace();
-		}
+		sb.append("<!DOCTYPE html> \n <html> \n <head> \n <meta charset=ISO-8859-1\n");
+		sb.append("<title>HtmlTest</title> \n</head><body>\n");
 	}
 	
-	public void addParagraph(ParagraphElement pe)
+	public void addParagraph(Paragraph pe)
 	{
-		try
-		{
-			System.out.println("i doc" + pe.getText());
-			bw.write("<p>"+ pe.getText() +"</p> \n ");
-		} catch (IOException e)
-		{
-			e.printStackTrace();
-		}
+		sb.append("<p>"+ pe.getText() +"</p> \n ");
 	}
 	
-	public void addHeading(HeadingElement he)
+	public void addHeading(Heading he)
 	{
-		try
-		{
-			System.out.println("i doc" + he.getText());
-			bw.write("<h1>"+ he.getText() +"</h1> \n ");
-		} catch (IOException e)
-		{
-			e.printStackTrace();
-		}
+		sb.append("<h1>"+ he.getText() +"</h1> \n ");
 	}
 	
 	public void setEndOfDocument()
 	{
-		try
-		{
-			bw.write("</body></html>");
-		} catch (IOException e)
-		{
-			e.printStackTrace();
-		}
+		sb.append("</body> \n </html>");
 	}
 	
 	@Override
@@ -80,7 +52,8 @@ public class HTMLDocument extends PlainTextDocument
 	{
 		try
 		{
-			bw.close();
+			fw.write(sb.toString());
+			fw.close();
 		} catch (IOException e)
 		{
 			e.printStackTrace();

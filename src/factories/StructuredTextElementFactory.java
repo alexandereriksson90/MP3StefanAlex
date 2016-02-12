@@ -1,8 +1,8 @@
 package factories;
 
 import documentElements.Element;
-import documentElements.HeadingElement;
-import documentElements.ParagraphElement;
+import documentElements.Heading;
+import documentElements.Paragraph;
 
 public class StructuredTextElementFactory extends ElementFactory
 {
@@ -18,13 +18,12 @@ public class StructuredTextElementFactory extends ElementFactory
 
 	public Element createHeading(String heading)
 	{
-		return new HeadingElement(heading);
+		return new Heading(heading);
 	}
-
 
 	public Element createParagraph(String paragraph)
 	{
-		return new ParagraphElement(paragraph);
+		return new Paragraph(paragraph);
 	}
 	
 }

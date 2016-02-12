@@ -2,11 +2,11 @@ package documentElements;
 
 import docParser.DocumentVisitor;
 
-public class HeadingElement extends StructuredTextElement
+public class Heading implements Element
 {
 	private String heading;
 	
-	public HeadingElement(String heading)
+	public Heading(String heading)
 	{
 		this.heading = heading;
 	}
@@ -23,9 +23,8 @@ public class HeadingElement extends StructuredTextElement
 		
 	}
 	@Override
-	public void addElement(StructuredTextElement e)
+	public void addElement(Element e)
 	{
-		// TODO Auto-generated method stub
 		
 	}
 

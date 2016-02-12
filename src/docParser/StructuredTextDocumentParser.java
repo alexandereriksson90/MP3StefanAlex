@@ -1,13 +1,12 @@
 package docParser;
 
 import document.TextDocument;
-import documentElements.BulletListElement;
+import documentElements.BulletList;
 import documentElements.CompositeElement;
 import documentElements.Element;
-import documentElements.HeadingElement;
-import documentElements.ParagraphElement;
-import documentElements.TableElement;
-import documentElements.TextElement;
+import documentElements.Heading;
+import documentElements.Paragraph;
+import documentElements.Table;
 
 public class StructuredTextDocumentParser implements DocumentVisitor
 {
@@ -20,30 +19,26 @@ public class StructuredTextDocumentParser implements DocumentVisitor
 				element.accept(this);
 				converter.postamble();
 	}
-	public void visit(ParagraphElement p)
+	public void visit(Paragraph p)
 	{
 		converter.addParagraph(p);
 	}
-	public void visit(BulletListElement b)
+	public void visit(BulletList b)
 	{
 		converter.addBulletList(b);
 	}
-	public void visit(HeadingElement h)
+	public void visit(Heading h)
 	{
 		converter.addHeading(h);
 	}
-	public void visit(TableElement t)
+	public void visit(Table t)
 	{
 		converter.addTable(t);
-	}
-	public void visit(TextElement t)
-	{
-		converter.addText(t);
 	}
 	@Override
 	public void visit(CompositeElement ce)
 	{
-		//
+		converter.addCompositeElement(ce);
 		
 	}
 

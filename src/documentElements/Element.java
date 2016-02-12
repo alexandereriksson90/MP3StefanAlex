@@ -8,5 +8,5 @@ public interface Element
 	
 	public abstract String getText();
 		
-	public abstract void addElement(StructuredTextElement e);
+	public abstract void addElement(Element e);
 }
