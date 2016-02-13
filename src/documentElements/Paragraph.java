@@ -2,7 +2,7 @@ package documentElements;
 
 import docParser.DocumentVisitor;
 
-public class Paragraph implements Element
+public class Paragraph extends Element
 {
 	private String paragraph;
 
@@ -17,18 +17,11 @@ public class Paragraph implements Element
 		return paragraph;
 	}
 
-	
-
 	@Override
 	public void accept(DocumentVisitor visitor)
 	{
 		visitor.visit(this);
 	}
 
-	@Override
-	public void addElement(Element e)
-	{
-		
-	}
 
 }

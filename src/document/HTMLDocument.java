@@ -4,8 +4,11 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import documentElements.BulletList;
+import documentElements.Element;
 import documentElements.Heading;
 import documentElements.Paragraph;
+import documentElements.TextElement;
 
 public class HTMLDocument extends PlainTextDocument
 {
@@ -40,6 +43,16 @@ public class HTMLDocument extends PlainTextDocument
 	public void addHeading(Heading he)
 	{
 		sb.append("<h1>"+ he.getText() +"</h1> \n ");
+	}
+	
+	public void addBulletList(BulletList bl)
+	{
+		sb.append("<ul> \n");
+		for(Element bulletElement : bl.getElements())
+		{
+			sb.append("<li>"+bulletElement.getText()+"</li> \n");
+		}
+		sb.append("</ul> \n");
 	}
 	
 	public void setEndOfDocument()

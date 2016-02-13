@@ -2,9 +2,11 @@ package docParser;
 
 import documentElements.BulletList;
 import documentElements.CompositeElement;
+import documentElements.Element;
 import documentElements.Heading;
 import documentElements.Paragraph;
 import documentElements.Table;
+import documentElements.TextElement;
 
 public interface DocumentVisitor
 {
@@ -13,4 +15,5 @@ public interface DocumentVisitor
 	public void visit(BulletList b);
 	public void visit(Table t);
 	public void visit(CompositeElement ce);
+	public void visit(TextElement te);
 }

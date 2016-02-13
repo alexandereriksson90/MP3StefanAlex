@@ -7,6 +7,7 @@ import documentElements.CompositeElement;
 import documentElements.Heading;
 import documentElements.Paragraph;
 import documentElements.Table;
+import documentElements.TextElement;
 
 public class ToLaTeXBuilder implements DocumentBuilder
 {
@@ -20,48 +21,44 @@ public class ToLaTeXBuilder implements DocumentBuilder
 	@Override
 	public void postamble()
 	{
-		
+		document.setEndOfDocument();
 	}
 	
 	@Override
 	public void addParagraph(Paragraph p)
 	{
-		// TODO Auto-generated method stub
+		document.addParagraph(p);
 		
 	}
 	
 	@Override
 	public void addBulletList(BulletList b)
-	{
-		// TODO Auto-generated method stub
-		
+	{		
+		document.addBulletList(b);
 	}
 	
 	@Override
 	public void addHeading(Heading h)
 	{
-		// TODO Auto-generated method stub
+		document.addHeading(h);
 		
 	}
 	
 	@Override
 	public void addTable(Table t)
-	{
-		// TODO Auto-generated method stub
+	{	
 		
 	}
 
 	@Override
 	public TextDocument build()
 	{
-		// TODO Auto-generated method stub
-		return null;
+		return document;
 	}
 
 	@Override
 	public void addCompositeElement(CompositeElement ce)
 	{
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -69,7 +66,13 @@ public class ToLaTeXBuilder implements DocumentBuilder
 	@Override
 	public void preamble()
 	{
-		// TODO Auto-generated method stub
+		document.setUpDocument();
+		
+	}
+
+	@Override
+	public void addTextElement(TextElement te)
+	{
 		
 	}
 

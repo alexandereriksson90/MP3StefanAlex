@@ -7,6 +7,7 @@ import documentElements.Element;
 import documentElements.Heading;
 import documentElements.Paragraph;
 import documentElements.Table;
+import documentElements.TextElement;
 
 public class StructuredTextDocumentParser implements DocumentVisitor
 {
@@ -19,27 +20,41 @@ public class StructuredTextDocumentParser implements DocumentVisitor
 				element.accept(this);
 				converter.postamble();
 	}
+	
+	@Override
 	public void visit(Paragraph p)
 	{
 		converter.addParagraph(p);
 	}
+	
+	@Override
 	public void visit(BulletList b)
 	{
 		converter.addBulletList(b);
 	}
+	
+	@Override
 	public void visit(Heading h)
 	{
 		converter.addHeading(h);
 	}
+	
+	@Override
 	public void visit(Table t)
 	{
 		converter.addTable(t);
 	}
+	
 	@Override
 	public void visit(CompositeElement ce)
 	{
-		converter.addCompositeElement(ce);
-		
+		converter.addCompositeElement(ce);	
+	}
+
+	@Override
+	public void visit(TextElement te)
+	{
+		converter.addTextElement(te);
 	}
 
 }

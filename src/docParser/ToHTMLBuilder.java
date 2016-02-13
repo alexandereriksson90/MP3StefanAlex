@@ -7,6 +7,7 @@ import documentElements.CompositeElement;
 import documentElements.Heading;
 import documentElements.Paragraph;
 import documentElements.Table;
+import documentElements.TextElement;
 
 public class ToHTMLBuilder implements DocumentBuilder
 {
@@ -42,7 +43,7 @@ public class ToHTMLBuilder implements DocumentBuilder
 	@Override
 	public void addBulletList(BulletList b)
 	{
-		
+		document.addBulletList(b);
 	}
 	
 	@Override
@@ -59,6 +60,12 @@ public class ToHTMLBuilder implements DocumentBuilder
 
 	@Override
 	public void addCompositeElement(CompositeElement ce)
+	{
+		
+	}
+
+	@Override
+	public void addTextElement(TextElement te)
 	{
 		
 	}

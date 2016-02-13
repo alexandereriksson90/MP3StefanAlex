@@ -2,7 +2,7 @@ package documentElements;
 
 import docParser.DocumentVisitor;
 
-public class Heading implements Element
+public class Heading extends Element
 {
 	private String heading;
 	
@@ -22,10 +22,6 @@ public class Heading implements Element
 		visitor.visit(this);
 		
 	}
-	@Override
-	public void addElement(Element e)
-	{
-		
-	}
+	
 
 }

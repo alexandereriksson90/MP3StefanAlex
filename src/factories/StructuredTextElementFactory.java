@@ -1,8 +1,12 @@
 package factories;
 
+import java.util.ArrayList;
+
+import documentElements.BulletList;
 import documentElements.Element;
 import documentElements.Heading;
 import documentElements.Paragraph;
+import documentElements.TextElement;
 
 public class StructuredTextElementFactory extends ElementFactory
 {
@@ -24,6 +28,18 @@ public class StructuredTextElementFactory extends ElementFactory
 	public Element createParagraph(String paragraph)
 	{
 		return new Paragraph(paragraph);
+	}
+
+
+	public Element createBulletList()
+	{
+		return new BulletList();
+	}
+
+	@Override
+	public Element createTextElement(String string)
+	{
+		return new TextElement(string);
 	}
 	
 }

@@ -1,14 +1,20 @@
 package model;
 
+import java.util.ArrayList;
+
 import docParser.DocumentBuilder;
 import docParser.StructuredTextDocumentParser;
 import document.StructuredTextDocument;
 import document.TextDocument;
+import documentElements.BulletList;
+import documentElements.CompositeElement;
+import documentElements.Element;
+import documentElements.TextElement;
 import factories.StructuredTextElementFactory;
 import factories.DocumentBuilderFactory;
 import factories.ElementFactory;
 
-public class test
+public class Test
 {
 
 	public void testRun()
@@ -23,20 +29,32 @@ public class test
 		converter.build().print();
 		DocumentBuilder converter2 = DocumentBuilderFactory.getInstance("ToLaTeX");
 		parser.parse(document, converter2);
-		converter.build().print();
+		converter2.build().print();
 	}
 
-	public void buildDocument(TextDocument doc, ElementFactory factory)
+	private void buildDocument(TextDocument doc, ElementFactory factory)
 	{ // jfr Builder
+		
+		
+		
 		doc.addElement(factory.createHeading("Uppdraget"));
-		doc.addElement(factory.createParagraph("Det h‰r ‰r ett roligt miniprojekt ..."));
-		doc.addElement(factory.createHeading("Lista ®over viktiga saker"));
-		// BulletList list = factory.createBulletList();
-		// list.add("F®or det f®orsta...");
-		// list.add("F®or det andra...");
-		// list.add("F®or det tredje...");
-		// doc.add(list);
+		doc.addElement(factory.createParagraph("Det h√§r √§r ett roligt miniprojekt ..."));
+		doc.addElement(factory.createHeading("Lista √∂ver viktiga saker"));		
+		
+//		CompositeElement ce = new CompositeElement();
+//		ce.addElement(factory.createHeading("Lista √∂ver viktiga saker"));
+		
+		
+		Element list = factory.createBulletList();
+		list.addElement(factory.createTextElement("F√∂r det f√∂rsta..."));
+		list.addElement(factory.createTextElement("F√∂r det andra..."));
+		list.addElement(factory.createTextElement("F√∂r det tredje..."));
+//		ce.addElement(list);
+		
+		
+		doc.addElement(list);
 		doc.addElement(factory.createParagraph("Multiplikationstabell"));
+		
 		// Table table = factory.createTable(10,10);
 		// for(int row = 0; row<10; row++)
 		// for(int col=0;col<10;col++)

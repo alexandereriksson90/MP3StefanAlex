@@ -7,6 +7,7 @@ import documentElements.CompositeElement;
 import documentElements.Heading;
 import documentElements.Paragraph;
 import documentElements.Table;
+import documentElements.TextElement;
 
 public interface DocumentBuilder
 {
@@ -26,6 +27,8 @@ public interface DocumentBuilder
 	TextDocument build();
 
 	void addCompositeElement(CompositeElement ce);
+	
+	void addTextElement(TextElement te);
 
 
 }

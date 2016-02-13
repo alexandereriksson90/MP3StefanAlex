@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 import docParser.DocumentVisitor;
 
-public class CompositeElement implements Element
+public class CompositeElement extends Element
 {
-	ArrayList<Element> elements;
+	protected ArrayList<Element> elements;
 	
 	public CompositeElement()
 	{
@@ -28,7 +28,16 @@ public class CompositeElement implements Element
 	@Override
 	public void accept(DocumentVisitor visitor)
 	{
-		visitor.visit(this);		
+		
+		for(Element element : elements)
+		{
+		
+		}
+	}
+	
+	public ArrayList<Element> getElements()
+	{
+		return elements;
 	}
 
 
