@@ -20,7 +20,6 @@ public class Heading extends Element
 	public void accept(DocumentVisitor visitor)
 	{
 		visitor.visit(this);
-		
 	}
 	
 

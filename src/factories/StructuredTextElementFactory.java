@@ -1,7 +1,5 @@
 package factories;
 
-import java.util.ArrayList;
-
 import documentElements.BulletList;
 import documentElements.Element;
 import documentElements.Heading;
