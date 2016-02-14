@@ -2,7 +2,6 @@ package docParser;
 
 import documentElements.BulletList;
 import documentElements.CompositeElement;
-import documentElements.Element;
 import documentElements.Heading;
 import documentElements.Paragraph;
 import documentElements.Table;

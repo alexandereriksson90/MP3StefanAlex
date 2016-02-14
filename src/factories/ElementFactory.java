@@ -1,7 +1,5 @@
 package factories;
 
-import java.util.ArrayList;
-
 import documentElements.Element;
 
 public abstract class ElementFactory

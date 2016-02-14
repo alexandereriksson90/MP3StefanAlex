@@ -29,10 +29,6 @@ public class CompositeElement extends Element
 	public void accept(DocumentVisitor visitor)
 	{
 		
-		for(Element element : elements)
-		{
-		
-		}
 	}
 	
 	public ArrayList<Element> getElements()
