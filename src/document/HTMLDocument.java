@@ -8,7 +8,6 @@ import documentElements.BulletList;
 import documentElements.Element;
 import documentElements.Heading;
 import documentElements.Paragraph;
-import documentElements.TextElement;
 
 public class HTMLDocument extends PlainTextDocument
 {
@@ -32,7 +31,7 @@ public class HTMLDocument extends PlainTextDocument
 	public void setUpDocument()
 	{
 		sb.append("<!DOCTYPE html> \n <html> \n <head> \n <meta charset=ISO-8859-1\n");
-		sb.append("<title>HtmlTest</title> \n</head><body>\n");
+		sb.append("<title></title> \n</head><body>\n");
 	}
 	
 	public void addParagraph(Paragraph pe)

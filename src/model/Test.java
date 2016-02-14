@@ -47,7 +47,7 @@ public class Test
 		
 		
 		doc.addElement(list);
-		doc.addElement(factory.createParagraph("Multiplikationstabell"));
+	
 		
 	
 	}
