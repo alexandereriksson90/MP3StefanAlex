@@ -9,34 +9,32 @@ public class DocumentBuilderSingletonFactory
 	private static DocumentBuilderSingletonFactory builderFactory;
 	private static ToHTMLBuilder htmlBuilder;
 	private static ToLaTeXBuilder laTeXBuilder;
-	public DocumentBuilderSingletonFactory()
-	{
-		
-	}
+
 	public static DocumentBuilderSingletonFactory getInstance()
 	{
-		 if(builderFactory==null)
-		 {
-			 builderFactory = new DocumentBuilderSingletonFactory();
-		 }
-		 return builderFactory;
+		if (builderFactory == null)
+		{
+			builderFactory = new DocumentBuilderSingletonFactory();
+		}
+		return builderFactory;
 	}
+
 	public DocumentBuilder createToHTMLBuilder()
 	{
-		if(htmlBuilder==null)
+		if (htmlBuilder == null)
 		{
 			htmlBuilder = new ToHTMLBuilder();
 		}
 		return htmlBuilder;
 	}
+
 	public DocumentBuilder createToLaTeXBuilder()
 	{
-		if(laTeXBuilder==null)
+		if (laTeXBuilder == null)
 		{
 			laTeXBuilder = new ToLaTeXBuilder();
 		}
 		return laTeXBuilder;
 	}
-	
 
 }

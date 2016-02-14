@@ -10,7 +10,7 @@ public class Paragraph extends Element
 	{
 		this.paragraph = paragraph;
 	}
-	
+
 	@Override
 	public String getText()
 	{
@@ -22,6 +22,5 @@ public class Paragraph extends Element
 	{
 		visitor.visit(this);
 	}
-
 
 }

@@ -1,6 +1,5 @@
 package docParser;
 
-
 import document.TextDocument;
 import documentElements.BulletList;
 import documentElements.CompositeElement;
@@ -11,11 +10,11 @@ import documentElements.TextElement;
 
 public interface DocumentBuilder
 {
-	
+
 	void preamble();
 
 	void postamble();
-	
+
 	void addParagraph(Paragraph p);
 
 	void addBulletList(BulletList b);
@@ -27,8 +26,7 @@ public interface DocumentBuilder
 	TextDocument build();
 
 	void addCompositeElement(CompositeElement ce);
-	
-	void addTextElement(TextElement te);
 
+	void addTextElement(TextElement te);
 
 }

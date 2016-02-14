@@ -11,11 +11,13 @@ public class StructuredTextElementFactory extends ElementFactory
 
 	public static ElementFactory getInstance()
 	{
-		try {
-            return (ElementFactory) Class.forName("factories.StructuredTextElementFactory").newInstance();
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
-            throw new RuntimeException(ex);
-        }
+		try
+		{
+			return (ElementFactory) Class.forName("factories.StructuredTextElementFactory").newInstance();
+		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex)
+		{
+			throw new RuntimeException(ex);
+		}
 	}
 
 	public Element createHeading(String heading)
@@ -28,7 +30,6 @@ public class StructuredTextElementFactory extends ElementFactory
 		return new Paragraph(paragraph);
 	}
 
-
 	public Element createBulletList()
 	{
 		return new BulletList();
@@ -39,5 +40,5 @@ public class StructuredTextElementFactory extends ElementFactory
 	{
 		return new TextElement(string);
 	}
-	
+
 }

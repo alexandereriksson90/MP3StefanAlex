@@ -31,28 +31,29 @@ public class LaTeXDocument extends PlainTextDocument
 
 	public void setUpDocument()
 	{
-		sb.append("\\documentclass{article} \n\\usepackage[utf8]{inputenc} \n\\usepackage[english,swedish]{babel} \n\\begin{document} \n");
+		sb.append(
+				"\\documentclass{article} \n\\usepackage[utf8]{inputenc} \n\\usepackage[english,swedish]{babel} \n\\begin{document} \n");
 	}
 
 	public void addParagraph(Paragraph pe)
 	{
-		sb.append("\\par \n"+ pe.getText() +"\n");
+		sb.append("\\par \n" + pe.getText() + "\n");
 	}
-	
+
 	public void addBulletList(BulletList bl)
 	{
 		sb.append("\\begin{itemize} \n");
-		
-		for(Element bulletElement : bl.getElements())
+
+		for (Element bulletElement : bl.getElements())
 		{
-			sb.append("\\item "+bulletElement.getText()+"\n");
+			sb.append("\\item " + bulletElement.getText() + "\n");
 		}
 		sb.append("\\end{itemize} \n");
 	}
 
 	public void addHeading(Heading he)
 	{
-		sb.append("\\section*{"+ he.getText() +"}\n");
+		sb.append("\\section*{" + he.getText() + "}\n");
 	}
 
 	public void setEndOfDocument()
