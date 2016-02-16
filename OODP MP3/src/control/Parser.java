@@ -1,4 +1,4 @@
-package control;
+package src.control;
 
 import model.DocElement;
 import model.Document;
